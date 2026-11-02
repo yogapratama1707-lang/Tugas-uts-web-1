@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan - Toko Buku Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-area">
+            <h2>BookStore.id</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html">Informasi Stok</a>
+            <a href="checkout.html" class="active">Pemesanan</a>
+            <a href="tracking.html">Tracking Pengiriman</a>
+            <a href="index.html" style="color: #ef4444;">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Form Checkout & Pemesanan</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Isi formulir pemesanan dan detail pembayaran di bawah ini.</p>
+
+        <form onsubmit="prosesCheckout(event)">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">1. Informasi Pemesan</h3>
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" required placeholder="Masukkan nama pemesan">
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat Pengiriman</label>
+                        <input type="text" required placeholder="Jl. Raya Cikarang No. 123">
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor Telepon / WA</label>
+                        <input type="tel" required placeholder="081234567890">
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">2. Detail Order & Pembayaran</h3>
+                    <div class="form-group">
+                        <label>Pilih Buku</label>
+                        <select required>
+                            <option value="">-- Pilih Buku --</option>
+                            <option>Pemrograman Web Modern (Rp 85.000)</option>
+                            <option>Belajar JavaScript untuk Pemula (Rp 75.000)</option>
+                            <option>Struktur Data & Algoritma (Rp 95.000)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Jumlah Beli</label>
+                        <input type="number" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Metode Pembayaran</label>
+                        <select required>
+                            <option>Transfer Bank (BCA / Mandiri)</option>
+                            <option>E-Wallet (QRIS / GoPay / OVO)</option>
+                            <option>COD (Bayar di Tempat)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn" style="margin-top: 1rem;">Konfirmasi & Proses Pemesanan</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

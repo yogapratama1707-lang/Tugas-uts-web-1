@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Toko Buku Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Portal Pemesanan Buku</h2>
+                <p>Silahkan masuk ke akun Anda</p>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" required placeholder="admin@toko.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn">Login Masuk</button>
+            </form>
+
+            <div style="margin-top: 1.25rem; display: flex; gap: 10px;">
+                <button class="btn btn-secondary" onclick="openModal('modalLupa')">Lupa Password</button>
+                <button class="btn btn-secondary" onclick="openModal('modalDaftar')">Daftar Akun</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Box Lupa Password -->
+    <div id="modalLupa" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modalLupa')">&times;</span>
+            <h3 style="margin-bottom: 0.5rem;">Lupa Password</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">Masukkan email terdaftar untuk mengatur ulang kata sandi.</p>
+            <div class="form-group">
+                <input type="email" placeholder="nama@email.com">
+            </div>
+            <button class="btn" onclick="alert('Link reset password telah dikirimkan ke email anda!'); closeModal('modalLupa');">Kirim Instruksi</button>
+        </div>
+    </div>
+
+    <!-- Modal Box Daftar -->
+    <div id="modalDaftar" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modalDaftar')">&times;</span>
+            <h3 style="margin-bottom: 0.5rem;">Registrasi Akun</h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1rem;">Lengkapi data diri untuk membuat akun baru.</p>
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Rian Alvio">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="rian@example.com">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+            <button class="btn" onclick="alert('Pendaftaran akun berhasil! Silahkan login.'); closeModal('modalDaftar');">Daftar Sekarang</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

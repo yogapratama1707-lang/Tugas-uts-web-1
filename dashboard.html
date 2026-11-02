@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Toko Buku Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="initDashboard()">
+    <header>
+        <div class="logo-area">
+            <h2>BookStore.id</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="stok.html">Informasi Stok</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html">Tracking Pengiriman</a>
+            <a href="index.html" style="color: #ef4444;">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div style="margin-bottom: 1.5rem;">
+            <h2 id="greetingText" style="font-size: 1.75rem;">Selamat Datang!</h2>
+            <p style="color: var(--text-muted);">Pilih salah satu menu di bawah ini untuk mengelola operasional toko buku online.</p>
+        </div>
+
+        <div class="grid-menu">
+            <a href="stok.html" class="menu-card">
+                <div>
+                    <div style="font-size: 1.1rem; font-weight: 700;">Informasi Stok & Katalog</div>
+                    <small style="color: var(--text-muted); font-weight: normal;">Cek & tambah inventaris buku</small>
+                </div>
+            </a>
+            <a href="tracking.html" class="menu-card">
+                <div>
+                    <div style="font-size: 1.1rem; font-weight: 700;">Tracking Pengiriman</div>
+                    <small style="color: var(--text-muted); font-weight: normal;">Lacak status delivery order</small>
+                </div>
+            </a>
+            <a href="checkout.html" class="menu-card">
+                <div>
+                    <div style="font-size: 1.1rem; font-weight: 700;">Form Pemesanan</div>
+                    <small style="color: var(--text-muted); font-weight: normal;">Input transaksi order baru</small>
+                </div>
+            </a>
+            <a href="#" class="menu-card" onclick="alert('Fitur Laporan Pemesanan sedang diproses.')">
+                <div>
+                    <div style="font-size: 1.1rem; font-weight: 700;">Laporan Pemesanan</div>
+                    <small style="color: var(--text-muted); font-weight: normal;">Ringkasan rekapan penjualan</small>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

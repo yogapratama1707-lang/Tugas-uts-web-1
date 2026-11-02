@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Buku - Toko Buku Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="renderKatalog()">
+    <header>
+        <div class="logo-area">
+            <h2>BookStore.id</h2>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="stok.html" class="active">Informasi Stok</a>
+            <a href="checkout.html">Pemesanan</a>
+            <a href="tracking.html">Tracking Pengiriman</a>
+            <a href="index.html" style="color: #ef4444;">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Informasi Stok & Katalog Buku</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Data ditampilkan secara dinamis dari file JSON / data.js terpisah lengkap dengan gambar produk.</p>
+
+        <!-- Form Tambah Stok -->
+        <form onsubmit="tambahStok(event)" style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 2rem;">
+            <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">+ Tambah Stok Buku Baru</h3>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                <div class="form-group">
+                    <label>Judul Buku</label>
+                    <input type="text" id="judul" placeholder="Contoh: Pemrograman Web 1" required>
+                </div>
+                <div class="form-group">
+                    <label>Penulis</label>
+                    <input type="text" id="penulis" placeholder="Nama Penulis" required>
+                </div>
+                <div class="form-group">
+                    <label>Harga (Rp)</label>
+                    <input type="number" id="harga" placeholder="85000" required>
+                </div>
+                <div class="form-group">
+                    <label>Jumlah Stok</label>
+                    <input type="number" id="stok" placeholder="10" required>
+                </div>
+            </div>
+            <button type="submit" class="btn" style="width: auto;">Simpan Buku Baru</button>
+        </form>
+
+        <!-- Tabel Katalog -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Sampul</th>
+                    <th>Judul Buku</th>
+                    <th>Penulis</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                </tr>
+            </thead>
+            <tbody id="tabelStok">
+                <!-- Diisi via JavaScript DOM -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
